@@ -8,7 +8,13 @@ app = FastAPI()
 @app.exception_handler(404)
 async def custom_404_handler(request: Request, exc):
     """Handles 404 errors for undefined routes."""
-    return JSONResponse(status_code=404, content={"message": "ERROR: This endpoint does not exist"})
+    return JSONResponse(status_code=404, content={"message": "ERROR"})
+
+# Custom error handler for 405 Method Not Allowed errors
+@app.exception_handler(405)
+async def custom_405_handler(request: Request, exc):
+    """Handles 405 errors for disallowed HTTP methods."""
+    return JSONResponse(status_code=405, content={"message": "ERROR"})
 
 # Include routes from the router
 app.include_router(router)
