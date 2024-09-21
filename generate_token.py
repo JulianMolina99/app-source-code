@@ -6,20 +6,20 @@ from dotenv import load_dotenv
 # Load environment variables from the .env file
 load_dotenv()
 
-# Load JWT_SECRET from environment variables and ensure it's a string
-JWT_SECRET = str(os.getenv("JWT_SECRET"))  # Fallback in case JWT_SECRET is missing
+# Load JWT_SECRET from environment variables
+JWT_SECRET = str(os.getenv("JWT_SECRET"))
 JWT_ALGORITHM = "HS256"
 
-# Function to generate a JWT that expires in 5 days
+# Function to generate a JWT that expires
 def generate_jwt():
-    expiration = datetime.utcnow() + timedelta(days=365)  # Set expiration for 5 days
+    expiration = datetime.utcnow() + timedelta(days=365) 
     payload = {
         "message": "This is a test",
         "to": "Juan Perez",
         "from": "Rita Asturia",
         "timeToLifeSec": 45,
-        "exp": expiration.timestamp(),  # Expiration time
-        "iat": datetime.utcnow().timestamp()  # Issued at time
+        "exp": expiration.timestamp(),  
+        "iat": datetime.utcnow().timestamp() 
     }
     
     # Generate the JWT
