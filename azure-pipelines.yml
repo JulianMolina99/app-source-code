@@ -9,4 +9,4 @@ resources:
       ref: refs/heads/main
 
 extends:
-  template: 'principal-pipelines/azure-pipelines.yml@pipeline-devops-microservice'
+  template: 'azure-pipelines.yml@pipeline-devops-microservice'
