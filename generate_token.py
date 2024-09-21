@@ -1,6 +1,6 @@
 import jwt
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from dotenv import load_dotenv
 
 # Load environment variables from the .env file
@@ -12,14 +12,14 @@ JWT_ALGORITHM = "HS256"
 
 # Function to generate a JWT that expires
 def generate_jwt():
-    expiration = datetime.utcnow() + timedelta(days=365) 
+    expiration = datetime.now(tz=timezone.utc) + timedelta(seconds=30)  # Expiration in 45 seconds
     payload = {
         "message": "This is a test",
         "to": "Juan Perez",
         "from": "Rita Asturia",
         "timeToLifeSec": 45,
-        "exp": expiration.timestamp(),  
-        "iat": datetime.utcnow().timestamp() 
+        "exp": int(expiration.timestamp()),  # Use integer for 'exp' in UTC
+        "iat": int(datetime.now(tz=timezone.utc).timestamp())  # Use integer for 'iat' in UTC
     }
     
     # Generate the JWT
