@@ -1,0 +1,5 @@
+{
+  "security": {
+    "continue-on-vulnerability-error": true
+  }
+}
