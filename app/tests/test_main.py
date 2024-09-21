@@ -84,7 +84,7 @@ def test_expired_jwt():
 def test_invalid_methods(method):
     response = getattr(client, method)("/DevOps")
     assert response.status_code == 405
-    assert response.json() == {"detail": "Method Not Allowed"}
+    assert response.json() == {"message": "ERROR"}
 
 # Test missing payload fields
 @pytest.mark.parametrize("incomplete_payload", [
