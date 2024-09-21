@@ -1,0 +1,26 @@
+# Entorno virtual
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Archivos de entorno
+.env
+
+# Archivos compilados de Python
+*.pyc
+__pycache__/
+**/__pycache__/
+
+
+# Configuraciones del editor o IDE
+.vscode/
+.idea/
+
+# Archivos de dependencia de librerías y binarios
+*.egg-info/
+.Python
+
+# Archivos de caché
+.cache/

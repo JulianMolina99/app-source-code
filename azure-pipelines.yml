@@ -1,0 +1,9 @@
+resources:
+  repositories:
+    - repository: pipeline-devops-microservice
+      type: git
+      name: technicalAssessment/pipeline-devops-microservice
+      ref: refs/heads/main
+
+extends:
+  template: 'principal-pipelines/azure-pipelines.yml@pipeline-devops-microservice'
