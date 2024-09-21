@@ -1,6 +1,7 @@
 pool:
   name: 'machine-onpremise'
-  
+
+
 resources:
   repositories:
     - repository: pipeline-devops-microservice
