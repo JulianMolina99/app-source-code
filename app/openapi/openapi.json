@@ -1,0 +1,171 @@
+{
+    "openapi":"3.1.0",
+    "info":{
+       "title":"FastAPI",
+       "version":"0.1.0"
+    },
+    "paths":{
+       "/DevOps":{
+          "get":{
+             "summary":"Invalid Method",
+             "operationId":"invalid_method_DevOps_get",
+             "responses":{
+                "200":{
+                   "description":"Successful Response",
+                   "content":{
+                      "application/json":{
+                         "schema":{
+                            
+                         }
+                      }
+                   }
+                }
+             }
+          },
+          "put":{
+             "summary":"Invalid Method",
+             "operationId":"invalid_method_DevOps_put",
+             "responses":{
+                "200":{
+                   "description":"Successful Response",
+                   "content":{
+                      "application/json":{
+                         "schema":{
+                            
+                         }
+                      }
+                   }
+                }
+             }
+          },
+          "post":{
+             "summary":"Devops Endpoint",
+             "operationId":"devops_endpoint_DevOps_post",
+             "parameters":[
+                {
+                   "required":true,
+                   "schema":{
+                      "type":"string",
+                      "title":"X-Parse-Rest-Api-Key"
+                   },
+                   "name":"X-Parse-REST-API-Key",
+                   "in":"header"
+                },
+                {
+                   "required":true,
+                   "schema":{
+                      "type":"string",
+                      "title":"X-Jwt-Kwy"
+                   },
+                   "name":"X-JWT-KWY",
+                   "in":"header"
+                }
+             ],
+             "responses":{
+                "200":{
+                   "description":"Successful Response",
+                   "content":{
+                      "application/json":{
+                         "schema":{
+                            
+                         }
+                      }
+                   }
+                },
+                "422":{
+                   "description":"Validation Error",
+                   "content":{
+                      "application/json":{
+                         "schema":{
+                            "$ref":"#/components/schemas/HTTPValidationError"
+                         }
+                      }
+                   }
+                }
+             }
+          },
+          "delete":{
+             "summary":"Invalid Method",
+             "operationId":"invalid_method_DevOps_delete",
+             "responses":{
+                "200":{
+                   "description":"Successful Response",
+                   "content":{
+                      "application/json":{
+                         "schema":{
+                            
+                         }
+                      }
+                   }
+                }
+             }
+          },
+          "patch":{
+             "summary":"Invalid Method",
+             "operationId":"invalid_method_DevOps_patch",
+             "responses":{
+                "200":{
+                   "description":"Successful Response",
+                   "content":{
+                      "application/json":{
+                         "schema":{
+                            
+                         }
+                      }
+                   }
+                }
+             }
+          }
+       }
+    },
+    "components":{
+       "schemas":{
+          "HTTPValidationError":{
+             "properties":{
+                "detail":{
+                   "items":{
+                      "$ref":"#/components/schemas/ValidationError"
+                   },
+                   "type":"array",
+                   "title":"Detail"
+                }
+             },
+             "type":"object",
+             "title":"HTTPValidationError"
+          },
+          "ValidationError":{
+             "properties":{
+                "loc":{
+                   "items":{
+                      "anyOf":[
+                         {
+                            "type":"string"
+                         },
+                         {
+                            "type":"integer"
+                         }
+                      ]
+                   },
+                   "type":"array",
+                   "title":"Location"
+                },
+                "msg":{
+                   "type":"string",
+                   "title":"Message"
+                },
+                "type":{
+                   "type":"string",
+                   "title":"Error Type"
+                }
+             },
+             "type":"object",
+             "required":[
+                "loc",
+                "msg",
+                "type"
+             ],
+             "title":"ValidationError"
+          }
+       }
+    }
+ }
