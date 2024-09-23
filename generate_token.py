@@ -12,7 +12,7 @@ JWT_ALGORITHM = "HS256"
 
 # Function to generate a JWT that expires
 def generate_jwt():
-    expiration = datetime.now(tz=timezone.utc) + timedelta(seconds=30)  # Expiration in 45 seconds
+    expiration = datetime.now(tz=timezone.utc) + timedelta(seconds=30)  # Expiration in x time
     payload = {
         "message": "This is a test",
         "to": "Juan Perez",
